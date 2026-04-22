@@ -22,15 +22,10 @@ class RoborazziTest {
     @get:Rule
     val composeTestRule = createComposeRule()
 
-    // Roborazziの共通ルール定義
     @get:Rule
     val roborazziRule = RoborazziRule(
         composeRule = composeTestRule,
         captureRoot = composeTestRule.onRoot(),
-        options = RoborazziRule.Options(
-            // 出力先を screenshots フォルダに一括指定
-            outputDirectoryPath = "screenshots"
-        )
     )
 
     @Test

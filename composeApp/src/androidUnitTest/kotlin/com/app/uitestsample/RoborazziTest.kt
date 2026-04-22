@@ -50,7 +50,7 @@ class RoborazziTest {
         composeTestRule.onRoot().captureRoboGif(
             composeRule = composeTestRule,
         ) {
-            composeTestRule.onNodeWithText("Click me!").performClick()
+            composeTestRule.onNodeWithText("Show Details").performClick()
         }
     }
 }

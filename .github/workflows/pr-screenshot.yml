@@ -29,15 +29,16 @@ jobs:
           mkdir -p composeApp/screenshots
           if git ls-remote --heads origin screenshots | grep -q screenshots; then
             git fetch origin screenshots --depth=1
-            if git ls-tree origin/screenshots "pr-${{ github.event.pull_request.number }}/" 2>/dev/null | grep -q .; then
-              git checkout origin/screenshots -- "pr-${{ github.event.pull_request.number }}/" 2>/dev/null || true
-              cp "pr-${{ github.event.pull_request.number }}"/*.png composeApp/screenshots/ 2>/dev/null || true
-              rm -rf "pr-${{ github.event.pull_request.number }}"
+            if git ls-tree origin/screenshots "main/" 2>/dev/null | grep -q .; then
+              git checkout origin/screenshots -- "main/" 2>/dev/null || true
+              cp main/*.png composeApp/screenshots/ 2>/dev/null || true
+              cp main/*.gif composeApp/screenshots/ 2>/dev/null || true
+              rm -rf main/
               echo "HAS_REFERENCE=true" >> $GITHUB_ENV
-              echo "Reference screenshots fetched."
+              echo "Reference screenshots fetched from main branch."
             else
               echo "HAS_REFERENCE=false" >> $GITHUB_ENV
-              echo "No reference screenshots found for this PR."
+              echo "No reference screenshots found for main branch."
             fi
           else
             echo "HAS_REFERENCE=false" >> $GITHUB_ENV

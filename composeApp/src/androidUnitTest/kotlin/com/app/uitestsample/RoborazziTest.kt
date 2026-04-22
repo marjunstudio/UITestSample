@@ -1,7 +1,7 @@
 package com.app.uitestsample
 
 import androidx.compose.ui.test.junit4.createComposeRule
-import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
 import com.github.takahirom.roborazzi.RobolectricDeviceQualifiers
@@ -50,7 +50,7 @@ class RoborazziTest {
         composeTestRule.onRoot().captureRoboGif(
             composeRule = composeTestRule,
         ) {
-            composeTestRule.onNodeWithText("Click me!").performClick()
+            composeTestRule.onNodeWithTag("toggle_button").performClick()
         }
     }
 }

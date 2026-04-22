@@ -17,6 +17,3 @@ captures
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
 node_modules/
-
-# Roborazzi screenshots (CIのscreenshotsブランチで管理)
-composeApp/screenshots/

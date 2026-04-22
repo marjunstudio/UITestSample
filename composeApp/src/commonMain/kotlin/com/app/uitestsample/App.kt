@@ -33,7 +33,7 @@ fun App() {
         var showContent by remember { mutableStateOf(false) }
         Surface(
             modifier = Modifier.fillMaxSize(),
-            color = MaterialTheme.colorScheme.background
+            color = MaterialTheme.colorScheme.tertiaryContainer
         ) {
             Column(
                 modifier = Modifier
